@@ -49,7 +49,7 @@ jobs:
           echo " VAR2 = ${{ env.VAR2 }}
 
       - name: apt update
-        run: apt update
+        run: sudo apt update
       
       - name: Print Heloo message
         run: echo "Hello world from deploy job"
