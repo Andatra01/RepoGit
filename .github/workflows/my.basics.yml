@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
+
+      - name: Git clone my repo
+        uses: actions/checkout@v1
+        
       - name: Print Heloo message
         run: echo "Hello world from testing"
 
@@ -23,8 +27,11 @@ jobs:
            echo "Hello Message1"
            echo "Hello Message2"
            echo "Aplication name - ${{ env.APLICATION_NAME }}"
+      
       - name: List current folder
         run: ls -la
+
+      
         
 
   my-deploy:
