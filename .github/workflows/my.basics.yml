@@ -47,6 +47,10 @@ jobs:
         run: 
           echo " VAR1 = ${{ env.VAR1 }}
           echo " VAR2 = ${{ env.VAR2 }}
+          echo " VAR3 = $LOCAL_VAR
+        env:
+          LOCAL_VAR: "This is Super local Environment variable:"
+      
 
       - name: apt update
         run: sudo apt update
