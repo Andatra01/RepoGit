@@ -1,6 +1,9 @@
 # GitHub
 
 name: My-github-actions
+env:
+   APLICATION_NAME: "MyFlask"
+   PACKAGE_NAME: "Flask_deploy_version-${{ github.sha }}"
 
 on:
    push:
@@ -15,6 +18,12 @@ jobs:
       - name: Print Heloo message
         run: echo "Hello world from testing"
 
+      - name: Execute few commands
+        run: 
+           echo "Hello Message1"
+           echo "Hello Message2"
+           echo "Aplication name - ${{ env.APLICATION_NAME }}"
+
 
   my-deploy:
     runs-on: ubuntu-latest
@@ -22,3 +31,6 @@ jobs:
     steps:
       - name: Print Heloo message
         run: echo "Hello world from deploy job"
+
+      - name: Deployment package
+        run: echo "Deploy package is ${{  env.PACKAGE_NAME }}"
